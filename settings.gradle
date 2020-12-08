@@ -1,0 +1,3 @@
+include ':EasyMultipleUploadImages'
+include ':app'
+rootProject.name = "MultipleUploadSelectImages"
