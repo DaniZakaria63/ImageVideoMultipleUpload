@@ -1,3 +1,4 @@
+include ':PreloadGila'
 include ':EasyMultipleUploadImages'
 include ':app'
 rootProject.name = "MultipleUploadSelectImages"

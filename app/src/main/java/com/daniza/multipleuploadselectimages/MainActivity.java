@@ -3,6 +3,7 @@ package com.daniza.multipleuploadselectimages;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import okhttp3.OkHttpClient;
 
 import android.content.Intent;
@@ -24,6 +25,8 @@ import com.daniza.easymultipleuploadimages.MultipleSelectException;
 import com.daniza.easymultipleuploadimages.MultipleSelectListener;
 import com.daniza.easymultipleuploadimages.MultipleUploadException;
 import com.daniza.easymultipleuploadimages.MultipleUploadListener;
+import com.daniza.preloadgila.CustomViewPreloadGila;
+import com.daniza.preloadgila.PreloadGila;
 
 import org.json.JSONObject;
 
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private EasyMultipleSelect mSelect;
     private EasyMultipleUpload.Builder mBuilder;
     private EasyMultipleUpload mUpload;
+    private PreloadGila preloadGila;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -55,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
                         .selectMultipleImages();
             }
         });
+
+        ConstraintLayout divMainLayout=findViewById(R.id.divMainLayout);
+        preloadGila=new PreloadGila(this,divMainLayout,0);
     }
 
     @Override
